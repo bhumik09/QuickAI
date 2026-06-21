@@ -2,10 +2,10 @@
 import sql from "../configs/db.js";
 export const getUserCreations=async(req,res)=>{
     try {
-        const { userId } =  req.auth();   
+        const { userId } =  req.auth()  
 
         const creations=await sql`SELECT * FROM creations WHERE user_id=${userId} ORDER BY created_at DESC`;
-        res.json({ success: true,creations });
+        res.json({ success: true,creations })
     }
     catch (error) {
        res.json({ success: false, message: error.message});
@@ -15,7 +15,7 @@ export const getUserCreations=async(req,res)=>{
 
 
 
-export const getPublishedCreations=async(req,res)=>{
+export const getPublishedCreations=asyn(req,res)=>{
     try {
           
 
